@@ -1,0 +1,14 @@
+<h1 class="text-center">Lists</h1>
+
+<hr>
+
+<div class="container">
+    <div class="d-flex justify-content-center"><%= link_to "Create list" , new_list_path, class: 'btn btn-success btn-lg' %></div>
+  <% if @lists.empty? %>
+    <h4 class="text-center">No list found</h4>
+  <% else %>
+    <% @lists.each do |list| %>
+      <p><%= link_to list.name, list %></p>
+    <% end %>
+  <% end %>
+</div>

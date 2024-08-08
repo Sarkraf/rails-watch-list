@@ -1,0 +1,11 @@
+<h1 class="text-center">Create Bookmark</h1>
+
+
+<div class="container">
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.label "Choice Movie" %>
+    <%= f.select :movie_id, @movies.map { |movie| [movie.title, movie.id] }, { include_blank: false }, { class: 'form-control'} %>
+    <%= f.input :comment, label: "Comment" %>
+    <%= f.button :submit, class: 'btn btn-success btn-lg' %>
+  <% end %>
+</div>
